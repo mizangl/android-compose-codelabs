@@ -56,7 +56,7 @@ import com.example.compose.rally.ui.components.BillRow
 import com.example.compose.rally.ui.components.RallyAlertDialog
 import com.example.compose.rally.ui.components.RallyDivider
 import com.example.compose.rally.ui.components.formatAmount
-import java.util.Locale
+import java.util.*
 
 @Composable
 fun OverviewScreen(
@@ -236,7 +236,9 @@ private fun AccountsCard(onClickSeeAll: () -> Unit, onAccountClick: (String) -> 
         values = { it.balance }
     ) { account ->
         AccountRow(
-            modifier = Modifier.clickable { onAccountClick(account.name) },
+            modifier = Modifier.clickable {
+                onAccountClick(account.name)
+            },
             name = account.name,
             number = account.number,
             amount = account.balance,

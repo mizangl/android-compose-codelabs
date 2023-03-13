@@ -46,7 +46,7 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.compose.rally.RallyDestination
-import java.util.Locale
+import java.util.*
 
 @Composable
 fun RallyTabRow(
@@ -64,7 +64,9 @@ fun RallyTabRow(
                 RallyTab(
                     text = screen.route,
                     icon = screen.icon,
-                    onSelected = { onTabSelected(screen) },
+                    onSelected = {
+                        onTabSelected(screen)
+                    },
                     selected = currentScreen == screen
                 )
             }
